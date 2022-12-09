@@ -1,0 +1,22 @@
+{
+  "name": "vbh",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.28.1",
+    "webpack": "^5.75.0"
+  },
+  "dependencies": {
+    "@fastify/static": "^6.6.0",
+    "@fastify/view": "^7.3.0",
+    "fastify": "^4.10.2",
+    "fastify-static": "^4.7.0",
+    "nunjucks": "^3.2.3"
+  }
+}

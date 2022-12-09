@@ -1,0 +1,375 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #000d16;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 12px 10%;
+  background-color: #000d16;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.062745098);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+#container-1 {
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 39px 14%;
+  gap: 40px;
+  font-family: "Poppins";
+}
+
+#container-1 h1 {
+  font-size: 20px;
+}
+
+#container-1 button {
+  border-radius: 10px;
+  height: 37px;
+  width: 88px;
+  background-color: #f4b6db;
+  cursor: pointer;
+}
+
+/* Add Task Button */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  background-color: #011522;
+  margin: 15% auto;
+  padding: 20px;
+  width: 15%;
+  height: 30%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.modal-content h2 {
+  display: flex;
+  font-family: Poppins;
+  justify-content: center;
+  color: white;
+}
+
+/* Task managing */
+
+#new-task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#new-task-input {
+  background-color: #f4b6db;
+  border-radius: 5px;
+  height: 25px;
+  color: #3a3939;
+  font-family: "Poppins";
+  padding: 3%;
+  border: 1px solid black;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+#new-task-input::placeholder {
+  color: var(--grey);
+}
+
+#form-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50px;
+  gap: 15%;
+  margin-top: 24%;
+}
+
+.closeBtn {
+  width: 90px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-family: Poppins;
+}
+
+#new-task-submit {
+  width: 90px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-family: Poppins;
+}
+
+#task-caract {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Poppins;
+  color: white;
+  font-size: smaller;
+  width: 70%;
+  margin-left: 5%;
+}
+
+#form-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  gap: 14px;
+}
+
+#new-task-submit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#new-task-submit:active {
+  opacity: 0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.task-list {
+  padding: 1rem;
+}
+
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkest);
+  padding: 3px;
+  margin-top: 10px;
+  border-radius: 1rem;
+  max-width: 75%;
+  margin-left: 3%;
+  border: 1px solid white;
+  background-color: #011727;
+}
+
+.task .date {
+  flex: 1 1 0%;
+  margin-left: 9%;
+  color: white;
+  font-family: Poppins;
+}
+
+.task .status {
+  flex: 1 1 0%;
+  margin-left: 3%;
+}
+
+.task .content {
+  flex: 1 1 0%;
+}
+
+.task .content .text {
+  color: var(--light);
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+  color: var(--pink);
+}
+
+.task .actions {
+  display: flex;
+  max-width: 70px;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.task .actions button:hover {
+  opacity: 0.8;
+}
+
+.task .actions button:active {
+  opacity: 0.6;
+}
+
+.task .actions .delete {
+  color: crimson;
+  background: white;
+  margin-left: 89px;
+  border: 1px solid black;
+  font-size: 15px;
+  font-family: "Poppins";
+  height: 26px;
+  border-radius: 5px;
+}
+
+.content {
+  color: white;
+  font-family: Poppins;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1%;
+  max-width: 20%;
+}
+
+/* Media Queries */
+
+@media screen and (max-height: 746px) {
+  .modal-content {
+    background-color: #011522;
+    margin: 15% auto;
+    padding: 16px;
+    width: 15%;
+    height: 36%;
+    box-shadow: 0 5px 8px 0 rgb(0 0 0 / 20%), 0 7px 20px 0 rgb(0 0 0 / 20%);
+    border-radius: 10px;
+  }
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+  }
+}
